@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Sales Data Analysis Dashboard</title>
+
+<link rel="stylesheet" href="style.css">
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- Header -->
+
+    <header>
+
+        <h1>📊 Sales Data Analysis Dashboard</h1>
+
+        <div class="header-controls">
+
+            <input
+            type="file"
+            id="csvFile"
+            accept=".csv">
+
+            <button id="themeBtn">
+                ☀ Light Mode
+            </button>
+
+            <button id="pdfBtn">
+                Download PDF
+            </button>
+
+        </div>
+
+    </header>
+
+    <!-- KPI Cards -->
+
+    <div class="cards">
+
+        <div class="card">
+            <h2 id="totalSales">₹0</h2>
+            <p>Total Sales</p>
+        </div>
+
+        <div class="card">
+            <h2 id="totalOrders">0</h2>
+            <p>Total Orders</p>
+        </div>
+
+        <div class="card">
+            <h2 id="totalCustomers">0</h2>
+            <p>Customers</p>
+        </div>
+
+        <div class="card">
+            <h2 id="avgSales">₹0</h2>
+            <p>Average Sale</p>
+        </div>
+
+    </div>
+
+    <!-- Charts -->
+
+    <div class="charts">
+
+        <div class="chart-box">
+
+            <h3>Monthly Sales Trend</h3>
+
+            <canvas id="monthlyChart"></canvas>
+
+        </div>
+
+        <div class="chart-box">
+
+            <h3>Region Wise Sales</h3>
+
+            <canvas id="regionChart"></canvas>
+
+        </div>
+
+    </div>
+
+    <!-- Sales Table -->
+
+    <div class="table-section">
+
+        <h2>Sales Records</h2>
+
+        <input
+        type="text"
+        id="searchBox"
+        placeholder="Search Customer, Region or Month">
+
+        <table>
+
+            <thead>
+
+                <tr>
+                    <th>Month</th>
+                    <th>Customer</th>
+                    <th>Region</th>
+                    <th>Sales</th>
+                </tr>
+
+            </thead>
+
+            <tbody id="tableBody">
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
